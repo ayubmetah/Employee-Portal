@@ -1,0 +1,91 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="jumbotron">
+    <div class="container">
+        <h2>Create New Employee</h2>
+        <div class="row">
+            <div class="col-md-12" >
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Name">Your Name:</label>
+                        <input asp-for="Name" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Nationality">Nationality:</label>
+                        <input asp-for="Nationality" />
+                        <span asp-validation-for="Nationality" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DOB">Date of Birth:</label>
+                        <input asp-for="DOB" asp-format="{0:d}" />
+                        <span asp-validation-for="DOB" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Age">Your Age:</label>
+                        <input asp-for="Age" />
+                        <span asp-validation-for="Age" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Passport">Passport No:</label>
+                        <input asp-for="Passport" />
+                        <span asp-validation-for="Passport" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="QID">Your QID:</label>
+                        <input asp-for="QID" />
+                        <span asp-validation-for="QID" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Gender" class="control-label">Your Gender: </label>
+                        <input type="radio" asp-for="Gender" value="M" /> Male
+                        <input type="radio" asp-for="Gender" value="F" /> Female
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MaritalStatus" class="control-label">MaritalStatus: </label>
+                        <input type="radio" asp-for="MaritalStatus" value="M" /> Married
+                        <input type="radio" asp-for="MaritalStatus" value="F" /> Single
+                        <span asp-validation-for="MaritalStatus" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="JoiningDate" class="control-label">Joning Date: </label>
+                        <input asp-for="JoiningDate" class="form-group" />
+                        <span asp-validation-for="JoiningDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Salary">Your Salary:</label>
+                        <input asp-for="Salary" />
+                        <span asp-validation-for="Salary" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Department">Department:</label>
+                        <select asp-for="Department">
+                            <option value="Development">Software Development</option>
+                            <option value="HR">HR</option>
+                            <option value="Support">Support and Installation</option>
+                            <option value="Accounts">Accounts</option>
+                            <option value="Sales">Sales</option>
+                            <option value="Design">Design</option>
+                            <option value="Hardware">Hardware & Maintenance</option>
+                            <option value="PM">Project Management</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Education">Academic Qualification:</label>
+                        <input asp-for="Education" />
+                        <span asp-validation-for="Education" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>       
+    </div>
+</div>

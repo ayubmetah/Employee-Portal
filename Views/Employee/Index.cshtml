@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<a asp-action="Create" style="width:100%">Create Employee Profile</a>
+<h2>View Employee Profile</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Nationality</th>
+            <th>DOB</th>
+            <th>Age</th>
+            <th>Passport No.</th>
+            <th>QID</th>
+            <th>Gender</th>
+            <th>Marital Status</th>
+            <th>Joining Date</th>
+            <th>Salary</th>
+            <th>Department</th>
+            <th>Academic Qualification</th>
+            <th colspan="2"> CRUD Controls</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Employee e in Model)
+        {
+        <tr>
+            <td>@e.Name</td>
+            <td>@e.Nationality</td>
+            <td>@e.DOB</td>
+            <td>@e.Age</td>
+            <td>@e.Passport</td>
+            <td>@e.QID</td>
+            <td>@e.Gender</td>
+            <td>@e.MaritalStatus</td>
+            <td>@e.JoiningDate</td>
+            <td>@e.Salary</td>
+            <td>@e.Department</td>
+            <td>@e.Education</td>
+
+            <td><a asp-action="Update" asp-route-empname="@e.Name">Update</a></td>
+            <td>
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" name="empname" value="@e.Name" />
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
